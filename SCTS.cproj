@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{04c9b0c8-5a76-4ea7-992d-7d98152ad51d}</ProjectGuid>
+    <avrdevice>ATmega324P</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>tri_led_pwm_adc</AssemblyName>
+    <Name>tri_led_pwm_adc_v2</Name>
+    <RootNamespace>tri_led_pwm_adc</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.9.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.avrdragon</avrtool>
+    <com_atmel_avrdbg_tool_avrdragon>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDbgClock>1000000</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.avrdragon</ToolType>
+      <ToolNumber>00A200042564</ToolNumber>
+      <ToolName>AVR Dragon</ToolName>
+    </com_atmel_avrdbg_tool_avrdragon>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="atmega\adc_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\adc_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\bits_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\gpio_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\gpio_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\spi_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\spi_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\systick_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\systick_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\timer_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\timer_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\types_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\usart_atmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmega\usart_atmega.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="blinky.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="blinky.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="device_ext_interrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="echo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="echo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="display.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="display.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="list.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="producer_consumer_demo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="producer_consumer_demo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pwm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ring_buffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="task_mutex.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="task_mutex.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="heap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="heap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ring_buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="system.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="system.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="systick.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="systick.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="task.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="vt100.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="vt100.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="atmega" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
